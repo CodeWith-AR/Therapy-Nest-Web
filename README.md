@@ -200,6 +200,14 @@ Contributions are welcomed from speech-language pathologists, neurologists, acce
 
 ---
 
+## 📬 Contact & Support
+
+- **Project Lead & Maintainer:** Rehman ([@CodeWith-AR](https://github.com/CodeWith-AR))
+- **Direct Email:** [mailrehman90527300@gmail.com](mailto:mailrehman90527300@gmail.com)
+- **GitHub Issues:** [https://github.com/CodeWith-AR/Therapy-Nest-Web/issues](https://github.com/CodeWith-AR/Therapy-Nest-Web/issues)
+
+---
+
 ## 📄 License
 
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
