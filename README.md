@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="assets/images/AppLogo.png" alt="Therapy Nest Logo" width="100" height="100" style="border-radius: 16px; margin-bottom: 16px;" />
+  <img src="./assets/images/app-logo.png" alt="Therapy Nest Logo" width="100" height="100" style="border-radius: 16px; margin-bottom: 16px;" />
 
   # Therapy Nest — Web Portal & Clinical Showcase
 
@@ -84,7 +84,7 @@ Therapy-Nest-Web/
 │
 ├── assets/
 │   └── images/
-│       └── AppLogo.png      # Official Therapy Nest brand vector logo
+│       └── app-logo.png     # Official Therapy Nest brand vector logo
 │
 ├── css/
 │   ├── tokens.css           # Global design tokens (colors, clamp fonts, spaces, shadows)
