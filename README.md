@@ -107,7 +107,7 @@ No heavy build steps or `node_modules` required! You can run the site immediatel
 ### Option 1: Python 3 Built-in Server (Recommended)
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/Therapy-Nest-Web.git
+git clone https://github.com/CodeWith-AR/Therapy-Nest-Web.git
 
 # Navigate into the project folder
 cd Therapy-Nest-Web
@@ -132,7 +132,7 @@ Right-click `index.html` inside VS Code and select **"Open with Live Server"**.
 This repository is pre-configured with a production-ready [`vercel.json`](vercel.json) supporting instant one-click deployment, asset caching, and security headers.
 
 ### Method A: Via Vercel Dashboard (Zero Config)
-1. Push this repository to your GitHub account: `https://github.com/YOUR_USERNAME/Therapy-Nest-Web`.
+1. Push this repository to your GitHub account: `https://github.com/CodeWith-AR/Therapy-Nest-Web`.
 2. Log in to [Vercel](https://vercel.com).
 3. Click **"Add New..." &rarr; "Project"**.
 4. Select **`Therapy-Nest-Web`** from your GitHub repositories.
