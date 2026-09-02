@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapy Nest — Free, Offline-First Cognitive & Speech Therapy App</title>
+  <meta name="description" content="Therapy Nest is a free, open-source, offline-capable cognitive and speech rehabilitation app for stroke, aphasia, TBI, and dementia patients. Powered by on-device Vosk speech recognition and IRT adaptive intelligence.">
+  <meta name="keywords" content="speech therapy app, aphasia rehabilitation, cognitive therapy, stroke recovery, free therapy app, offline speech therapy, IRT adaptive engine, constant therapy alternative">
+  <meta name="theme-color" content="#FAF9F5">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/AppLogo.png">
+  <link rel="apple-touch-icon" href="assets/images/AppLogo.png">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Therapy Nest — Daily Practice Companion for Recovery">
+  <meta property="og:description" content="Free, open-source cognitive and speech therapy with adaptive IRT intelligence and offline on-device speech recognition.">
+  <meta property="og:image" content="assets/images/AppLogo.png">
+
+  <!-- Google Fonts: Cormorant Garamond (Serif Display), Inter (Sans), JetBrains Mono (Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="c-header" role="banner">
+    <div class="l-container c-header__inner">
+      <a href="index.html" class="c-logo" aria-label="Therapy Nest Home">
+        <img src="assets/images/AppLogo.png" alt="Therapy Nest App Logo" class="c-logo__img" width="36" height="36">
+        <span class="c-logo__text">Therapy Nest</span>
+      </a>
+
+      <nav class="c-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="c-nav-list">
+          <li><a href="index.html" class="c-nav-link c-nav-link--active">Overview</a></li>
+          <li><a href="research.html" class="c-nav-link">Clinical Science</a></li>
+          <li><a href="#domains" class="c-nav-link">Therapy Domains</a></li>
+          <li><a href="support.html" class="c-nav-link">Help & FAQs</a></li>
+          <li><a href="licenses.html" class="c-nav-link">Open Source</a></li>
+        </ul>
+      </nav>
+
+      <div class="c-header__actions">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--desktop-only">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="#download" class="btn btn--primary">Get the App</a>
+        <button class="c-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="c-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Menu">
+    <ul class="c-nav-drawer__list">
+      <li><a href="index.html" class="c-nav-drawer__link">Overview</a></li>
+      <li><a href="research.html" class="c-nav-drawer__link">Clinical Science & IRT</a></li>
+      <li><a href="#domains" class="c-nav-drawer__link">Therapy Domains</a></li>
+      <li><a href="support.html" class="c-nav-drawer__link">Help Center & FAQs</a></li>
+      <li><a href="privacy.html" class="c-nav-drawer__link">Privacy Policy</a></li>
+      <li><a href="terms.html" class="c-nav-drawer__link">Terms of Service</a></li>
+      <li><a href="licenses.html" class="c-nav-drawer__link">Open Source Licenses</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-bottom: var(--space-xl);">
+      <a href="#download" class="btn btn--primary btn--full btn--lg">Download Free App</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION -->
+    <section class="l-section l-section--hero surface--canvas">
+      <div class="l-container">
+        <div class="l-grid-hero">
+          <div>
+            <span class="text-eyebrow text-eyebrow--blue">Open Source · Clinically Grounded · 100% Free</span>
+            <h1 style="margin-top: var(--space-xs);">Evidence-based cognitive and speech therapy, accessible to everyone.</h1>
+            <p class="text-lead" style="margin-bottom: var(--space-xl);">
+              Designed for stroke survivors, individuals with aphasia, traumatic brain injury (TBI), and dementia. Built with on-device speech recognition, adaptive Item Response Theory (IRT), and full offline capability — zero subscription fees, forever.
+            </p>
+            <div class="btn-group" style="margin-bottom: var(--space-lg);" id="download">
+              <a href="#download-apk" class="btn btn--primary btn--lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993 0 .5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.996-3.4567c.105-.1816.043-.414-.1385-.519-.1817-.105-.4141-.043-.5191.1386L17.202 8.971C15.6517 8.2618 13.8967 7.869 12 7.869c-1.8967 0-3.6518.3928-5.202 1.102L4.78 5.4843c-.105-.1816-.3374-.2436-.5191-.1386-.1816.105-.2435.3374-.1386.519l1.996 3.4567C2.6883 11.2338.3435 14.869.3435 19.131h23.313c0-4.262-2.3448-7.8972-5.776-9.8096"/></svg>
+                Download Android APK (v1.0.0)
+              </a>
+              <a href="research.html" class="btn btn--secondary btn--lg">
+                Read Clinical Whitepaper &rarr;
+              </a>
+            </div>
+            <p class="text-caption">
+              <span class="badge badge--teal">Active Milestone</span> Modules 0–14 completed. Ready for Android 6.0+ (API 23+) & budget 2GB-RAM devices.
+            </p>
+          </div>
+
+          <!-- Interactive Live Clinical Simulator Card -->
+          <div class="c-card c-card--white" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-hover);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-md);">
+              <span class="badge badge--blue">Live Interactive Simulator</span>
+              <span class="badge badge--amber">&theta; = +0.4 (Mild Recovery)</span>
+            </div>
+            <div style="background-color: var(--color-surface-card); border-radius: var(--radius-lg); padding: var(--space-lg); text-align: center; margin-bottom: var(--space-md); border: 1px solid var(--color-hairline);">
+              <span class="text-caption-uppercase" style="color: var(--color-muted); display: block; margin-bottom: var(--space-xxs);">Confrontation Naming Task (Language Domain)</span>
+              
+              <!-- Silhouette Vector Stimulus (Apple - Resized 60% smaller to 34px) -->
+              <div class="c-stimulus-silhouette" aria-label="Visual Stimulus: Apple Silhouette">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M34 14C34 10 37 6 42 5C41 10 38 14 34 14Z" fill="#5DB872"/>
+                  <path d="M32 14C31.5 11 30 8 28 6" stroke="#8E8B82" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M32 18C28 14 20 13 14 19C7 26 8 39 15 49C19 55 24 59 30 59C31 59 31.5 58 32 58C32.5 58 33 59 34 59C40 59 45 55 49 49C56 39 57 26 50 19C44 13 36 14 32 18Z" fill="#CC785C"/>
+                </svg>
+              </div>
+
+              <h4 style="margin-bottom: var(--space-xs);">"What is this object?"</h4>
+              <p class="text-caption" style="margin-bottom: var(--space-md);">Tap microphone and speak aloud to test on-device Vosk ASR:</p>
+
+              <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-sm);">
+                <button id="demo-mic-btn" class="btn btn--primary" style="width: 56px; height: 56px; border-radius: var(--radius-full); padding: 0;" aria-label="Test Speech Recognition">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                </button>
+                <div id="demo-asr-waveform" class="c-waveform" style="width: 100%; opacity: 0.3; transition: opacity var(--duration-fast);">
+                  <div class="c-waveform__bar"></div>
+                  <div class="c-waveform__bar"></div>
+                  <div class="c-waveform__bar"></div>
+                  <div class="c-waveform__bar"></div>
+                  <div class="c-waveform__bar"></div>
+                  <div class="c-waveform__bar"></div>
+                  <div class="c-waveform__bar"></div>
+                  <div class="c-waveform__bar"></div>
+                </div>
+                <div id="demo-asr-status" class="text-caption" style="font-weight: 500;">Tap microphone to simulate voice recognition</div>
+                <div id="demo-asr-result" class="text-caption" style="color: var(--color-ink);"></div>
+              </div>
+            </div>
+            
+            <!-- Simulator Footer with Colored Vector Silhouettes -->
+            <div style="display: flex; align-items: center; justify-content: space-between; font-size: var(--text-caption); color: var(--color-muted); flex-wrap: wrap; gap: var(--space-xs);">
+              <span style="display: inline-flex; align-items: center; gap: 4px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#2B7BC8" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                100% On-Device (No Cloud Audio)
+              </span>
+              <span style="display: inline-flex; align-items: center; gap: 4px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#E8A55A" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                Drift SQLite Cache
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. STATS & KEY PILLARS (Surface Soft) -->
+    <section class="l-section l-section--sm surface--soft">
+      <div class="l-container">
+        <div class="l-grid-4 text-center">
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 2.75rem; color: var(--color-primary); line-height: 1;">$0</div>
+            <p style="font-weight: 600; color: var(--color-ink); margin-top: var(--space-xs); margin-bottom: 0;">100% Free Forever</p>
+            <span class="text-caption">No $30/mo subscription barriers</span>
+          </div>
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 2.75rem; color: var(--color-primary-blue); line-height: 1;">100%</div>
+            <p style="font-weight: 600; color: var(--color-ink); margin-top: var(--space-xs); margin-bottom: 0;">Offline Capable</p>
+            <span class="text-caption">Practices run without internet via SQLite</span>
+          </div>
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 2.75rem; color: var(--color-accent-teal); line-height: 1;">7</div>
+            <p style="font-weight: 600; color: var(--color-ink); margin-top: var(--space-xs); margin-bottom: 0;">Clinical Domains</p>
+            <span class="text-caption">WAB-R aligned therapeutic modules</span>
+          </div>
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 2.75rem; color: var(--color-accent-amber); line-height: 1;">2PL IRT</div>
+            <p style="font-weight: 600; color: var(--color-ink); margin-top: var(--space-xs); margin-bottom: 0;">Adaptive AI Engine</p>
+            <span class="text-caption">Calibrated to 75% success flow channel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THE 7 THERAPY DOMAINS (Surface Card) -->
+    <section id="domains" class="l-section surface--canvas">
+      <div class="l-container">
+        <div class="text-center mx-auto" style="max-width: 720px; margin-bottom: var(--space-2xl);">
+          <span class="text-eyebrow">Comprehensive Rehabilitation</span>
+          <h2>Seven Clinically Grounded Therapy Domains</h2>
+          <p class="text-lead">
+            Every exercise is structured with graduated 4-level clinical cueing hierarchies (semantic, phonemic, visual, full model) to ensure recovery momentum without frustration.
+          </p>
+        </div>
+
+        <!-- Interactive Domain Tab Switcher with Colored Silhouette Icon Badges -->
+        <div class="c-tabs" role="tablist" aria-label="Therapy Domains">
+          
+          <button class="c-tab-btn c-tab-btn--active" role="tab" aria-selected="true" data-target="tab-language">
+            <span class="c-tab-btn__icon c-tab-btn__icon--blue">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 9h-4v2h4v-2zm3-4H7v2h10V7z"/></svg>
+            </span>
+            Language & Naming
+          </button>
+
+          <button class="c-tab-btn" role="tab" aria-selected="false" data-target="tab-memory">
+            <span class="c-tab-btn__icon c-tab-btn__icon--teal">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.56 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5h2v6h-2V8zm1 10c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+            </span>
+            Memory & Recall
+          </button>
+
+          <button class="c-tab-btn" role="tab" aria-selected="false" data-target="tab-attention">
+            <span class="c-tab-btn__icon c-tab-btn__icon--amber">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/><line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2"/><line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            Attention & Focus
+          </button>
+
+          <button class="c-tab-btn" role="tab" aria-selected="false" data-target="tab-speech">
+            <span class="c-tab-btn__icon c-tab-btn__icon--coral">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+            </span>
+            Speech & Repetition
+          </button>
+
+          <button class="c-tab-btn" role="tab" aria-selected="false" data-target="tab-reading">
+            <span class="c-tab-btn__icon c-tab-btn__icon--blue">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+            </span>
+            Reading & Writing
+          </button>
+
+          <button class="c-tab-btn" role="tab" aria-selected="false" data-target="tab-math">
+            <span class="c-tab-btn__icon c-tab-btn__icon--amber">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 3h2v3h3v2h-3v3h-2v-3h-3V9h3V6zm-6 8h4v2H7v-2zm10 2h-4v-2h4v2zm0-4h-4v-2h4v2z"/></svg>
+            </span>
+            Math & Numeracy
+          </button>
+
+        </div>
+
+        <!-- Tab 1: Language -->
+        <div id="tab-language" class="c-tab-panel c-tab-panel--active" role="tabpanel">
+          <div class="l-grid-3">
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--blue">
+                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 9h-4v2h4v-2zm3-4H7v2h10V7z"/></svg>
+              </div>
+              <h4>Confrontation Naming</h4>
+              <p>Picture naming across concrete to abstract categories. Supports both spoken input via Vosk ASR and 4-choice visual selection.</p>
+              <div class="badge badge--blue">52 Calibrated Items</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--blue">
+                <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
+              </div>
+              <h4>Word Finding & Fluency</h4>
+              <p>Timed category generation (animals, food, tools) with silence prompts and acoustic pacing to stimulate lexical retrieval.</p>
+              <div class="badge badge--blue">Clinical Standard</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--blue">
+                <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              </div>
+              <h4>Sentence Completion</h4>
+              <p>Syntactically graded sentence blanks targeting grammatical recovery with plausible distractor filtering.</p>
+              <div class="badge badge--blue">4-Level Cueing</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Memory -->
+        <div id="tab-memory" class="c-tab-panel" role="tabpanel">
+          <div class="l-grid-3">
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--teal">
+                <svg viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11zM3 14l5 8h-6zM15 14h6l-3 8z"/></svg>
+              </div>
+              <h4>Visual Sequence Recall</h4>
+              <p>Memorize and reproduce sequences of 3–6 geometric shapes with dynamic display times (1000ms–3000ms).</p>
+              <div class="badge badge--teal">b = -2.0 to +2.0</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--teal">
+                <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg>
+              </div>
+              <h4>Word-Picture Pair Memory</h4>
+              <p>Associative memory recall pairing auditory stimuli with real-world objects across variable retention intervals.</p>
+              <div class="badge badge--teal">50 Items</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--teal">
+                <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+              </div>
+              <h4>N-Back Working Memory</h4>
+              <p>Continuous visual stream recognition requiring patients to identify stimuli matched 1, 2, or 3 steps prior.</p>
+              <div class="badge badge--teal">Cognitive Load</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Attention -->
+        <div id="tab-attention" class="c-tab-panel" role="tabpanel">
+          <div class="l-grid-3">
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--amber">
+                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+              </div>
+              <h4>Symbol Search</h4>
+              <p>Sustained visual scanning across 3x3 to 6x6 symbol grids with distractor similarity scaling and reaction latency capture.</p>
+              <div class="badge badge--amber">Timed Task</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--amber">
+                <svg viewBox="0 0 24 24"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>
+              </div>
+              <h4>Selective Rule Filtering</h4>
+              <p>Target identification adhering to dynamic constraints (e.g., tap even numbers, filter shapes by color).</p>
+              <div class="badge badge--amber">Cognitive Flexibility</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--amber">
+                <svg viewBox="0 0 24 24"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg>
+              </div>
+              <h4>Task Switching (Dual Channel)</h4>
+              <p>Alternating attention paradigms alternating rules per stimulus to strengthen executive functioning.</p>
+              <div class="badge badge--amber">Executive Control</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Speech -->
+        <div id="tab-speech" class="c-tab-panel" role="tabpanel">
+          <div class="l-grid-3">
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--coral">
+                <svg viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+              </div>
+              <h4>Word Repetition</h4>
+              <p>Listen to TTS target pronunciation and repeat into on-device Vosk ASR. Scored with Jaro-Winkler phoneme similarity.</p>
+              <div class="badge badge--coral">Vosk On-Device</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--coral">
+                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+              </div>
+              <h4>Conversational Script Training</h4>
+              <p>Functional everyday dialogues (ordering coffee, doctor appointments) with progressive cue fading.</p>
+              <div class="badge badge--coral">Functional Speech</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--coral">
+                <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+              </div>
+              <h4>Oral Reading Aloud</h4>
+              <p>Sentence-level read-aloud tasks capturing acoustic stability, phonemic accuracy, and speech latency.</p>
+              <div class="badge badge--coral">Aphasia Recovery</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 5: Reading -->
+        <div id="tab-reading" class="c-tab-panel" role="tabpanel">
+          <div class="l-grid-3">
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--blue">
+                <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+              </div>
+              <h4>Functional Reading</h4>
+              <p>Real-world reading comprehension tasks featuring medication labels, grocery receipts, street signs, and transit schedules.</p>
+              <div class="badge badge--blue">54 Items</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--blue">
+                <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              </div>
+              <h4>Spelling from Dictation</h4>
+              <p>Auditory word prompts with large-target virtual typing interface designed for post-stroke agraphia.</p>
+              <div class="badge badge--blue">Agraphia Support</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--blue">
+                <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+              </div>
+              <h4>Word Alphabetizing</h4>
+              <p>Drag-and-drop lexical ordering reinforcing orthographic knowledge and sequential processing.</p>
+              <div class="badge badge--blue">Orthographic Focus</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 6: Math -->
+        <div id="tab-math" class="c-tab-panel" role="tabpanel">
+          <div class="l-grid-3">
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--amber">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><polyline points="12 7 12 12 15 15" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+              </div>
+              <h4>Analog Clock Reading</h4>
+              <p>Programmatically rendered analog clock faces for temporal orientation and time-telling rehabilitation.</p>
+              <div class="badge badge--amber">Functional Math</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--amber">
+                <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+              </div>
+              <h4>Money & Change Calculation</h4>
+              <p>Everyday financial numeracy calculating totals and calculating change with realistic currency visual aids.</p>
+              <div class="badge badge--amber">Real-World Numeracy</div>
+            </div>
+
+            <div class="c-card c-card--white">
+              <div class="c-card__icon-box c-card__icon-box--amber">
+                <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </div>
+              <h4>Concrete Arithmetic</h4>
+              <p>Basic addition and subtraction reinforced with visual count objects to overcome acalculia.</p>
+              <div class="badge badge--amber">Acalculia Recovery</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. OFFLINE-FIRST & ON-DEVICE SPEECH PRIVACY (Surface Dark) -->
+    <section class="l-section surface--dark">
+      <div class="l-container">
+        <div class="l-grid-2" style="align-items: center;">
+          <div>
+            <span class="text-eyebrow text-eyebrow--teal">Privacy By Architecture</span>
+            <h2 style="color: var(--color-on-dark);">Zero Cloud Voice Transmission. 100% On-Device Processing.</h2>
+            <p style="color: var(--color-on-dark-soft);" class="text-lead">
+              Unlike commercial apps that stream private medical voice recordings to expensive cloud APIs, Therapy Nest runs a pre-trained 50MB <strong>Vosk acoustic model</strong> directly on the user's phone.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: var(--space-md); margin-top: var(--space-lg);">
+              <li style="display: flex; gap: var(--space-sm); align-items: flex-start;">
+                <span style="color: var(--color-accent-teal); font-size: 1.25rem;">✓</span>
+                <div>
+                  <strong style="color: var(--color-on-dark);">Complete Patient Privacy:</strong> Microphone audio is processed entirely in volatile device RAM and discarded immediately. No voice data is ever recorded to a server.
+                </div>
+              </li>
+              <li style="display: flex; gap: var(--space-sm); align-items: flex-start;">
+                <span style="color: var(--color-accent-teal); font-size: 1.25rem;">✓</span>
+                <div>
+                  <strong style="color: var(--color-on-dark);">Full Offline Continuity:</strong> Rural and underserved patients can practice indefinitely with zero internet access using Drift SQLite local caching.
+                </div>
+              </li>
+              <li style="display: flex; gap: var(--space-sm); align-items: flex-start;">
+                <span style="color: var(--color-accent-teal); font-size: 1.25rem;">✓</span>
+                <div>
+                  <strong style="color: var(--color-on-dark);">Optimized for Budget Devices:</strong> Engineered to run smoothly on 2GB-RAM Android devices without thermal throttling or high battery consumption.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Code Window Showing Offline Architecture -->
+          <div class="c-code-window">
+            <div class="c-code-window__header">
+              <div class="c-code-window__dots">
+                <span class="c-code-window__dot c-code-window__dot--red"></span>
+                <span class="c-code-window__dot c-code-window__dot--yellow"></span>
+                <span class="c-code-window__dot c-code-window__dot--green"></span>
+              </div>
+              <span class="c-code-window__title">speech_pipeline_offline.dart</span>
+              <span></span>
+            </div>
+            <div class="c-code-window__body">
+<pre><code><span style="color: #6C6A64;">// 1. Capture microphone PCM stream locally</span>
+<span style="color: #5DB8A6;">final</span> audioPath = <span style="color: #E8A55A;">await</span> recorder.stop();
+
+<span style="color: #6C6A64;">// 2. Transcribe on-device via Vosk (0ms latency, $0 API cost)</span>
+<span style="color: #5DB8A6;">final</span> transcript = <span style="color: #E8A55A;">await</span> voskService.recognize(audioPath);
+
+<span style="color: #6C6A64;">// 3. Compute phoneme similarity against target</span>
+<span style="color: #5DB8A6;">final</span> score = JaroWinkler.similarity(transcript, targetWord);
+
+<span style="color: #6C6A64;">// 4. Update patient ability estimate (θ) via IRT locally</span>
+localDb.updateTheta(domain: <span style="color: #E8A55A;">'speech'</span>, score: score);</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ADAPTIVE IRT INTELLIGENCE (Surface Canvas) -->
+    <section class="l-section surface--canvas">
+      <div class="l-container">
+        <div class="l-grid-2" style="align-items: center;">
+          <div>
+            <span class="text-eyebrow">Item Response Theory (IRT)</span>
+            <h2>Dynamic Difficulty Matching to the 75% Flow Channel</h2>
+            <p class="text-lead">
+              Traditional therapy apps use crude static levels. Therapy Nest utilizes a 2-Parameter Logistic (2PL) IRT and Elo adaptive engine that updates the patient's latent ability (&theta;) after every single attempt.
+            </p>
+            <p>
+              By matching item difficulty (<em>b</em>) to the patient's ability (&theta;), the app keeps success rates at approximately 75% — proven by clinical literature to maximize neuroplastic recovery while preventing discouragement.
+            </p>
+            <div style="margin-top: var(--space-lg);">
+              <a href="research.html" class="btn btn--secondary">Explore Mathematical Formulation &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Interactive IRT Ability Slider Simulator -->
+          <div class="c-card c-card--white" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-card);">
+            <div style="display: justify; justify-content: space-between; display: flex; align-items: center; margin-bottom: var(--space-md);">
+              <span class="badge badge--blue">Adaptive Engine Simulation</span>
+              <span id="irt-theta-val" style="font-family: var(--font-mono); font-weight: 700; font-size: 1.25rem; color: var(--color-primary-blue);">+0.0</span>
+            </div>
+
+            <label for="irt-slider" class="form-label" style="display: block; margin-bottom: var(--space-xs);">
+              Adjust Patient Ability Score (&theta;):
+            </label>
+            <input type="range" id="irt-slider" min="-3.0" max="3.0" step="0.1" value="0.0" style="width: 100%; height: 8px; border-radius: var(--radius-pill); accent-color: var(--color-primary-blue); margin-bottom: var(--space-lg);">
+
+            <div style="display: flex; flex-direction: column; gap: var(--space-sm); background-color: var(--color-surface-soft); padding: var(--space-md); border-radius: var(--radius-md); border: 1px solid var(--color-hairline);">
+              <div style="display: flex; justify-content: space-between;">
+                <span class="text-caption">Recovery Classification:</span>
+                <strong id="irt-level-name" style="font-size: var(--text-body-sm); color: var(--color-ink);">Functional Recovery / Mild</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span class="text-caption">Recommended Target Item Difficulty:</span>
+                <strong id="irt-recommended-diff" style="font-size: var(--text-body-sm); color: var(--color-primary);">b = +0.0</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span class="text-caption">Predicted Success Probability:</span>
+                <strong id="irt-expected-prob" style="font-size: var(--text-body-sm); color: var(--color-success);">75% (Flow Channel: 70–80%)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PRE-FOOTER CALLOUT CTA (Warm Coral) -->
+    <section class="l-section" style="padding-top: 0;">
+      <div class="l-container">
+        <div class="c-callout c-callout--coral">
+          <span class="badge" style="background-color: rgba(255, 255, 255, 0.2); color: #FFFFFF; border-color: rgba(255, 255, 255, 0.3); margin-bottom: var(--space-sm);">100% Free · Open Source · Non-Profit</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: var(--space-sm);">Start Your Daily Recovery Companion Today</h2>
+          <p style="max-width: 640px; margin: 0 auto var(--space-xl); font-size: var(--text-body-lg);">
+            Whether you are recovering at home or working with a speech-language pathologist, Therapy Nest provides structured daily practice designed to build neuroplasticity.
+          </p>
+          <div class="btn-group" style="justify-content: center;">
+            <a href="#download" class="btn btn--secondary btn--lg" style="background-color: #FFFFFF; color: var(--color-ink); border-color: transparent;">
+              Download Android APK
+            </a>
+            <a href="support.html" class="btn btn--secondary-on-dark btn--lg">
+              Visit Help Center
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer (Surface Dark) -->
+  <footer class="c-footer" role="contentinfo">
+    <div class="l-container">
+      <div class="c-footer__grid">
+        <div>
+          <a href="index.html" class="c-logo" style="color: var(--color-on-dark);">
+            <img src="assets/images/AppLogo.png" alt="Therapy Nest App Logo" class="c-logo__img" width="36" height="36">
+            <span class="c-logo__text" style="color: var(--color-on-dark);">Therapy Nest</span>
+          </a>
+          <p class="c-footer__brand-p">
+            A free, open-source, offline-capable digital therapy platform for global stroke, aphasia, and cognitive recovery.
+          </p>
+          <div style="margin-top: var(--space-md);">
+            <span class="badge badge--teal">MIT Open Source License</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="c-footer__col-title">App & Features</div>
+          <ul class="c-footer__links">
+            <li><a href="index.html#domains" class="c-footer__link">Therapy Domains</a></li>
+            <li><a href="research.html" class="c-footer__link">Adaptive IRT Engine</a></li>
+            <li><a href="index.html#download" class="c-footer__link">Download Android APK</a></li>
+            <li><a href="support.html#getting-started" class="c-footer__link">Getting Started Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="c-footer__col-title">Research & Code</div>
+          <ul class="c-footer__links">
+            <li><a href="research.html" class="c-footer__link">Clinical Whitepaper</a></li>
+            <li><a href="licenses.html" class="c-footer__link">Open Source Licenses</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="c-footer__link">GitHub Repository</a></li>
+            <li><a href="research.html#datasets" class="c-footer__link">Clinical Datasets</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="c-footer__col-title">Legal & Support</div>
+          <ul class="c-footer__links">
+            <li><a href="privacy.html" class="c-footer__link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="c-footer__link">Terms of Service</a></li>
+            <li><a href="terms.html#disclaimer" class="c-footer__link">Medical Disclaimer</a></li>
+            <li><a href="support.html" class="c-footer__link">Help Center & FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-footer__bottom">
+        <div>
+          &copy; 2026 Therapy Nest Open Source Project. Released under the MIT License.
+        </div>
+        <div style="max-width: 600px; color: var(--color-muted-soft);">
+          <strong>Medical Disclaimer:</strong> Therapy Nest is a self-guided practice companion and does not provide medical diagnosis or replace professional speech-language pathology or clinical therapy.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/interactive-demo.js"></script>
+</body>
+</html>

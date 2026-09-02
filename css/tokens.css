@@ -1,0 +1,151 @@
+:root {
+  /* ==========================================================================
+     1. COLOR PALETTE (Warm Editorial + Clinical Authority)
+     ========================================================================== */
+  
+  /* Brand Accents */
+  --color-primary: #CC785C;               /* Signature warm coral */
+  --color-primary-active: #A9583E;        /* Pressed / active coral */
+  --color-primary-disabled: #E6DFD8;      /* Disabled coral tint */
+  --color-primary-blue: #2B7BC8;          /* Calm medical blue */
+  --color-primary-blue-dark: #1A5490;     /* Deep medical blue */
+  --color-primary-blue-light: #E8F3FF;    /* Subtle blue surface wash */
+
+  /* Text & Ink */
+  --color-ink: #141413;                   /* Primary headlines & high-emphasis text */
+  --color-body-strong: #252523;           /* Lead paragraphs & strong text */
+  --color-body: #3D3D3A;                  /* Default running body text */
+  --color-muted: #6C6A64;                 /* Secondary descriptions, subtitles */
+  --color-muted-soft: #8E8B82;            /* Captions, timestamps, fine print */
+  --color-on-primary: #FFFFFF;            /* Text on primary coral/blue buttons */
+  --color-on-dark: #FAF9F5;               /* Off-white text on dark surfaces */
+  --color-on-dark-soft: #A09D96;          /* Secondary text on dark surfaces & footer */
+
+  /* Backgrounds & Surfaces */
+  --color-canvas: #FAF9F5;                /* Default warm cream page background */
+  --color-surface-soft: #F5F0E8;          /* Subtle band separators & pill tags */
+  --color-surface-card: #EFE9DE;          /* Feature cards & content containers */
+  --color-surface-cream-strong: #E8E0D2;  /* Emphasized tabs & highlighted cards */
+  --color-surface-white: #FFFFFF;         /* Pure white for selected cards/inputs */
+  --color-surface-dark: #181715;          /* Dominant dark navy surface & footer */
+  --color-surface-dark-elevated: #252320; /* Elevated modules inside dark bands */
+  --color-surface-dark-soft: #1F1E1B;     /* Inner code blocks & sub-panels */
+
+  /* Borders & Hairlines */
+  --color-hairline: #E6DFD8;              /* Standard 1px border on cream surfaces */
+  --color-hairline-soft: #EBE6DF;         /* Subtle inner dividers */
+  --color-hairline-dark: #2F2D29;         /* 1px border on dark navy surfaces */
+
+  /* Semantic Feedback */
+  --color-accent-teal: #5DB8A6;           /* Live status, ASR waveforms, accuracy */
+  --color-accent-amber: #E8A55A;          /* Streak badges, achievements */
+  --color-success: #5DB872;               /* Correct feedback & milestone checks */
+  --color-warning: #D4A017;               /* Alert warnings */
+  --color-error: #C64545;                 /* Errors & destructive actions */
+
+  /* ==========================================================================
+     2. TYPOGRAPHY SCALES
+     ========================================================================== */
+  
+  /* Font Families */
+  --font-serif: "Copernicus", "Tiempos Headline", "Cormorant Garamond", "EB Garamond", "Source Serif 4", Georgia, serif;
+  --font-sans: "StyreneB", "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Fluid Display Sizes (Serif Display - 400 weight) */
+  --text-display-xl: clamp(2.5rem, 5vw + 1rem, 4rem);      /* 40px -> 64px, h1 */
+  --text-display-lg: clamp(2rem, 3.8vw + 0.8rem, 3rem);     /* 32px -> 48px, h2 */
+  --text-display-md: clamp(1.625rem, 2.5vw + 0.7rem, 2.25rem); /* 26px -> 36px, h3 */
+  --text-display-sm: clamp(1.375rem, 1.8vw + 0.5rem, 1.75rem); /* 22px -> 28px, sub-heads */
+
+  /* Titles & Headings (Sans - 600 weight) */
+  --text-title-lg: clamp(1.25rem, 1.2vw + 0.8rem, 1.375rem);   /* 20px -> 22px */
+  --text-title-md: 1.125rem;                                   /* 18px */
+  --text-title-sm: 1rem;                                       /* 16px */
+
+  /* Body Running Text (Sans - 400 weight) */
+  --text-body-lg: 1.125rem;                                    /* 18px */
+  --text-body-md: 1rem;                                        /* 16px (Base) */
+  --text-body-sm: 0.875rem;                                    /* 14px */
+  --text-caption: 0.8125rem;                                   /* 13px */
+  --text-caption-uppercase: 0.75rem;                           /* 12px */
+  --text-code: 0.875rem;                                       /* 14px */
+
+  /* Line Heights */
+  --leading-none: 1.0;
+  --leading-tight: 1.12;
+  --leading-snug: 1.25;
+  --leading-normal: 1.45;
+  --leading-relaxed: 1.65;
+  --leading-loose: 1.8;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.04em;
+  --tracking-widest: 0.12em;
+
+  /* ==========================================================================
+     3. SPACING SYSTEM (4px Base Grid)
+     ========================================================================== */
+  --space-xxs: 0.25rem;   /* 4px */
+  --space-xs: 0.5rem;     /* 8px */
+  --space-sm: 0.75rem;    /* 12px */
+  --space-md: 1rem;       /* 16px */
+  --space-lg: 1.5rem;     /* 24px */
+  --space-xl: 2rem;       /* 32px */
+  --space-2xl: 3rem;      /* 48px */
+  --space-3xl: 4rem;      /* 64px */
+  --space-section: clamp(4rem, 8vw, 6rem); /* 64px -> 96px */
+
+  /* Container Widths */
+  --container-max-width: 1200px;
+  --container-text-width: 800px;
+  --gutter-padding: clamp(1rem, 4vw, 2.5rem);
+
+  /* ==========================================================================
+     4. BORDER RADIUS SCALE
+     ========================================================================== */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;       /* Buttons, inputs, small tags */
+  --radius-lg: 12px;      /* Cards, dialogs, code blocks */
+  --radius-xl: 16px;      /* Hero illustration & marquee cards */
+  --radius-2xl: 24px;     /* Major modal containers */
+  --radius-pill: 9999px;  /* Pill badges, search bars */
+  --radius-full: 50%;     /* Avatars, circular icons */
+
+  /* ==========================================================================
+     5. ELEVATION & SHADOWS
+     ========================================================================== */
+  --shadow-none: none;
+  --shadow-subtle: 0 1px 3px rgba(20, 20, 19, 0.05);
+  --shadow-card: 0 4px 12px rgba(20, 20, 19, 0.04), 0 1px 2px rgba(20, 20, 19, 0.03);
+  --shadow-hover: 0 8px 24px rgba(20, 20, 19, 0.08), 0 2px 6px rgba(20, 20, 19, 0.04);
+  --shadow-dropdown: 0 12px 32px rgba(20, 20, 19, 0.12);
+  --shadow-glow-coral: 0 0 24px rgba(204, 120, 92, 0.2);
+  --shadow-glow-blue: 0 0 24px rgba(43, 123, 200, 0.2);
+
+  /* ==========================================================================
+     6. MOTION & ANIMATION TOKENS
+     ========================================================================== */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-page: 600ms;
+
+  --ease-standard: cubic-bezier(0.2, 0.0, 0.0, 1.0);
+  --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-Index Hierarchy */
+  --z-base: 1;
+  --z-card: 10;
+  --z-header: 100;
+  --z-dropdown: 200;
+  --z-modal-backdrop: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}

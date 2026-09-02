@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Science & IRT Adaptive Engine — Therapy Nest</title>
+  <meta name="description" content="Academic whitepaper and mathematical specifications for Therapy Nest's 2PL Item Response Theory adaptive engine and offline speech therapy architecture.">
+  <meta name="theme-color" content="#FAF9F5">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/AppLogo.png">
+  <link rel="apple-touch-icon" href="assets/images/AppLogo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="c-header" role="banner">
+    <div class="l-container c-header__inner">
+      <a href="index.html" class="c-logo" aria-label="Therapy Nest Home">
+        <img src="assets/images/AppLogo.png" alt="Therapy Nest App Logo" class="c-logo__img" width="36" height="36">
+        <span class="c-logo__text">Therapy Nest</span>
+      </a>
+
+      <nav class="c-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="c-nav-list">
+          <li><a href="index.html" class="c-nav-link">Overview</a></li>
+          <li><a href="research.html" class="c-nav-link c-nav-link--active">Clinical Science</a></li>
+          <li><a href="support.html" class="c-nav-link">Help & FAQs</a></li>
+          <li><a href="privacy.html" class="c-nav-link">Privacy Policy</a></li>
+          <li><a href="licenses.html" class="c-nav-link">Open Source</a></li>
+        </ul>
+      </nav>
+
+      <div class="c-header__actions">
+        <a href="index.html#download" class="btn btn--primary">Get the App</a>
+        <button class="c-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="c-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Menu">
+    <ul class="c-nav-drawer__list">
+      <li><a href="index.html" class="c-nav-drawer__link">Overview</a></li>
+      <li><a href="research.html" class="c-nav-drawer__link">Clinical Science & IRT</a></li>
+      <li><a href="index.html#domains" class="c-nav-drawer__link">Therapy Domains</a></li>
+      <li><a href="support.html" class="c-nav-drawer__link">Help Center & FAQs</a></li>
+      <li><a href="privacy.html" class="c-nav-drawer__link">Privacy Policy</a></li>
+      <li><a href="terms.html" class="c-nav-drawer__link">Terms of Service</a></li>
+      <li><a href="licenses.html" class="c-nav-drawer__link">Open Source Licenses</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-bottom: var(--space-xl);">
+      <a href="index.html#download" class="btn btn--primary btn--full btn--lg">Download Free App</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content" class="l-section surface--canvas">
+    <div class="l-container l-container--text">
+      
+      <div style="margin-bottom: var(--space-2xl);">
+        <span class="text-eyebrow text-eyebrow--blue">Academic Whitepaper & Methodology</span>
+        <h1>Clinical Science & Adaptive Engine Architecture</h1>
+        <p class="text-lead">
+          Bridging the neuroplastic rehabilitation dosage gap through edge-computed Item Response Theory and private speech recognition.
+        </p>
+      </div>
+
+      <!-- Abstract Card -->
+      <div class="c-card c-card--white" style="margin-bottom: var(--space-2xl); border-left: 4px solid var(--color-primary-blue);">
+        <h4 style="margin-bottom: var(--space-xs);">Paper Abstract (JMIR / Frontiers in Digital Health)</h4>
+        <p style="font-size: var(--text-body-sm); line-height: 1.7; color: var(--color-body-strong);">
+          <strong>Title:</strong> <em>Therapy Nest: An Open-Source, IRT-Adaptive Mobile Platform for Cognitive and Speech Rehabilitation in Resource-Constrained Settings — Design, Architecture, and Pilot Evaluation</em><br><br>
+          <strong>Background:</strong> Over 15 million individuals suffer strokes worldwide annually, with 30–40% acquiring aphasia. While neuroplastic recovery requires 4+ hours of weekly intensive practice, standard healthcare systems average less than 45 minutes of weekly in-clinic therapy. Commercial digital therapeutics impose recurring subscription costs ($30/month) that exclude underserved populations.<br><br>
+          <strong>Methods:</strong> We developed Therapy Nest, a free, offline-first digital therapy system combining an on-device Vosk acoustic speech recognizer with a 2-Parameter Logistic (2PL) Item Response Theory adaptive engine. The algorithm maintains patient success rates within the optimal flow channel (70–80%).
+        </p>
+      </div>
+
+      <article style="display: flex; flex-direction: column; gap: var(--space-2xl);">
+
+        <!-- Section 1 -->
+        <section>
+          <h2>1. The Rehabilitation Dosage Crisis</h2>
+          <p>
+            Neuroscience demonstrates that neuroplastic restructuring following stroke or traumatic brain injury is <strong>dosage-dependent</strong>. Patients who practice self-directed therapy daily show significantly superior functional landmark recovery compared to those limited to weekly clinic visits alone.
+          </p>
+          <p>
+            Therapy Nest removes the economic barrier by creating a permanently free, open-source alternative to proprietary commercial apps.
+          </p>
+        </section>
+
+        <!-- Section 2: IRT Math -->
+        <section>
+          <h2>2. Item Response Theory (2PL IRT) Formulation</h2>
+          <p>
+            Instead of coarse, static difficulty levels, Therapy Nest models each patient's latent cognitive and speech ability as a continuous parameter &theta; &isin; [-3.0, +3.0]. The probability of a correct response on item <em>i</em> is calculated using the 2-Parameter Logistic model:
+          </p>
+
+          <div class="c-card" style="background-color: var(--color-surface-soft); text-align: center; padding: var(--space-xl); margin: var(--space-md) 0;">
+            <div style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-ink); margin-bottom: var(--space-xs);">
+              P<sub>i</sub>(&theta;) = 1 / (1 + e<sup>-1.702 &middot; a<sub>i</sub> (&theta; - b<sub>i</sub>)</sup>)
+            </div>
+            <p class="text-caption" style="margin: 0;">
+              Where <strong>&theta;</strong> = Patient latent ability &middot; <strong>b<sub>i</sub></strong> = Item difficulty parameter &middot; <strong>a<sub>i</sub></strong> = Item discrimination
+            </p>
+          </div>
+
+          <h3>Real-Time Elo Calibration Engine</h3>
+          <p>
+            After each exercise attempt, the patient's domain ability score is updated instantaneously:
+          </p>
+          <div class="c-card" style="background-color: var(--color-surface-soft); text-align: center; padding: var(--space-lg); margin: var(--space-sm) 0;">
+            <div style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-ink); margin-bottom: var(--space-xxs);">
+              &theta;<sub>new</sub> = &theta;<sub>old</sub> + K &middot; (Outcome - Expected)
+            </div>
+            <span class="text-caption">Where <em>K</em> = 32.0 (scaled by hint penalty factor) and Expected = P<sub>i</sub>(&theta;)</span>
+          </div>
+        </section>
+
+        <!-- Section 3: Cueing Hierarchy Table with Responsive Wrapper -->
+        <section>
+          <h2>3. Clinical Cueing Hierarchy & Partial Scoring</h2>
+          <p>
+            To prevent frustration and promote errorless learning, Therapy Nest implements a standardized 4-level cueing hierarchy:
+          </p>
+          
+          <div class="c-table-wrapper">
+            <table class="c-table">
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Assistance Type</th>
+                  <th>Clinical Description</th>
+                  <th>Score Credit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Level 0</strong></td>
+                  <td>Independent</td>
+                  <td>Stimulus presented with no assistance</td>
+                  <td style="color: var(--color-success); font-weight: 600;">1.0 (100%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Level 1</strong></td>
+                  <td>Semantic Cue</td>
+                  <td>Functional clue ("It's something you drink from")</td>
+                  <td style="color: var(--color-primary-blue); font-weight: 600;">0.7 (70%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Level 2</strong></td>
+                  <td>Phonemic Cue</td>
+                  <td>First sound / letter prompt ("Starts with /k/")</td>
+                  <td style="color: var(--color-primary-blue); font-weight: 600;">0.7 (70%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Level 3</strong></td>
+                  <td>Visual Choice</td>
+                  <td>Multiple-choice reduction to 2 options</td>
+                  <td style="color: var(--color-accent-amber); font-weight: 600;">0.3 (30%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Level 4</strong></td>
+                  <td>Full Model</td>
+                  <td>Correct answer spoken & revealed for repetition</td>
+                  <td style="color: var(--color-muted); font-weight: 600;">0.0 (0%)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 4: Academic Collaboration -->
+        <section id="datasets">
+          <h2>4. Academic Partnerships & Clinical Datasets</h2>
+          <p>
+            We invite universities, hospitals, and clinical rehabilitation researchers to collaborate on longitudinal pilot evaluations and multi-language localization (including Urdu and Hindi speech models).
+          </p>
+          <div style="margin-top: var(--space-md);">
+            <a href="support.html" class="btn btn--primary">Connect with the Research Team</a>
+          </div>
+        </section>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="c-footer" role="contentinfo">
+    <div class="l-container">
+      <div class="c-footer__bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 Therapy Nest Project. MIT Open Source License.</div>
+        <div><a href="privacy.html" class="c-footer__link">Privacy Policy</a> &middot; <a href="terms.html" class="c-footer__link">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

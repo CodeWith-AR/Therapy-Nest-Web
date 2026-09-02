@@ -1,0 +1,266 @@
+/* ==========================================================================
+   Therapy Nest — Base Typography & Layout Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Typography Elements
+   -------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--color-ink);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-display-xl);
+  line-height: 1.08;
+  letter-spacing: var(--tracking-tighter);
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-size: var(--text-display-lg);
+  line-height: 1.12;
+  margin-bottom: var(--space-sm);
+}
+
+h3 {
+  font-size: var(--text-display-md);
+  line-height: 1.2;
+  margin-bottom: var(--space-xs);
+}
+
+h4 {
+  font-size: var(--text-display-sm);
+  line-height: 1.25;
+  margin-bottom: var(--space-xs);
+}
+
+p {
+  font-size: var(--text-body-md);
+  color: var(--color-body);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-md);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.text-lead {
+  font-size: var(--text-body-lg);
+  color: var(--color-body-strong);
+  line-height: var(--leading-relaxed);
+}
+
+.text-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption-uppercase);
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  display: inline-block;
+}
+
+.text-eyebrow--blue {
+  color: var(--color-primary-blue);
+}
+
+.text-eyebrow--teal {
+  color: var(--color-accent-teal);
+}
+
+.text-caption {
+  font-size: var(--text-caption);
+  color: var(--color-muted);
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: var(--text-code);
+}
+
+code {
+  background-color: var(--color-surface-soft);
+  color: var(--color-ink);
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-hairline);
+}
+
+/* --------------------------------------------------------------------------
+   2. Layout Containers
+   -------------------------------------------------------------------------- */
+
+.l-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter-padding);
+  padding-right: var(--gutter-padding);
+}
+
+.l-container--text {
+  max-width: var(--container-text-width);
+}
+
+.l-section {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+  position: relative;
+}
+
+.l-section--sm {
+  padding-top: calc(var(--space-section) * 0.6);
+  padding-bottom: calc(var(--space-section) * 0.6);
+}
+
+.l-section--hero {
+  padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+/* --------------------------------------------------------------------------
+   3. Grids & Flex Layouts
+   -------------------------------------------------------------------------- */
+
+.l-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.l-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.l-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.l-grid-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .l-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+  .l-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+  .l-grid-hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .l-grid-2,
+  .l-grid-3,
+  .l-grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Surface Pacing Rhythm Modes
+   -------------------------------------------------------------------------- */
+
+.surface--canvas {
+  background-color: var(--color-canvas);
+  color: var(--color-body);
+}
+
+.surface--soft {
+  background-color: var(--color-surface-soft);
+  color: var(--color-body);
+  border-top: 1px solid var(--color-hairline);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.surface--card {
+  background-color: var(--color-surface-card);
+  color: var(--color-body);
+}
+
+.surface--dark {
+  background-color: var(--color-surface-dark);
+  color: var(--color-on-dark-soft);
+}
+
+.surface--dark h1,
+.surface--dark h2,
+.surface--dark h3,
+.surface--dark h4 {
+  color: var(--color-on-dark);
+}
+
+.surface--dark p {
+  color: var(--color-on-dark-soft);
+}
+
+.surface--dark code {
+  background-color: var(--color-surface-dark-soft);
+  color: var(--color-on-dark);
+  border-color: var(--color-hairline-dark);
+}
+
+/* --------------------------------------------------------------------------
+   5. Accessible Utilities
+   -------------------------------------------------------------------------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-md);
+  background-color: var(--color-primary-blue);
+  color: var(--color-on-primary);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  z-index: var(--z-toast);
+  font-weight: 600;
+  transition: top var(--duration-fast) var(--ease-standard);
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
